@@ -1,17 +1,18 @@
 ﻿@model BookShop.Models.Author
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
+
 
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thêm tác giả</h1>
+                <h1>Sửa tác giả</h1>
             </div>
-            
+
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -25,13 +26,15 @@
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        @using (Html.BeginForm("Save","Author"))
+                        @using (Html.BeginForm("Save", "Author"))
                         {
                             @Html.AntiForgeryToken()
 
                             <div class="form-horizontal">
-                                <hr/>
+                                <hr />
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-5">
@@ -42,7 +45,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="Create" class="btn btn-default" />
+                                        <input type="submit" value="Save" class="btn btn-default" />
                                     </div>
                                 </div>
                             </div>

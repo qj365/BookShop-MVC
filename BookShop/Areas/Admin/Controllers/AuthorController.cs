@@ -1,8 +1,5 @@
 ﻿using BookShop.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
@@ -17,6 +14,11 @@ namespace BookShop.Areas.Admin.Controllers
             _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Admin/Author
         public ActionResult Index()
         {
@@ -29,13 +31,40 @@ namespace BookShop.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Edit(int id)
+        {
+            var author = _context.Authors.SingleOrDefault(c => c.Id == id);
+            if (author == null)
+                return HttpNotFound();
+            return View(author);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var author = _context.Authors.SingleOrDefault(c => c.Id == id);
+            if (author == null)
+                return HttpNotFound();
+            else
+            {
+                _context.Authors.Remove(author);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Author");
+            }
+        }
 
         [HttpPost]
-        public ActionResult Create(Author author)
+        public ActionResult Save(Author author)
         {
-            _context.Authors.Add(author);
+            if (author.Id == 0)
+                _context.Authors.Add(author);
+            else
+            {
+                var authorInDb = _context.Authors.Single(c => c.Id == author.Id);
+                authorInDb.Name = author.Name;
+            }
+
             _context.SaveChanges();
-            return RedirectToAction("Index","Author");
+            return RedirectToAction("Index", "Author");
         }
     }
 }
