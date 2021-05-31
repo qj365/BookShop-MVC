@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -17,6 +17,8 @@ namespace BookShop.Models
         public int Id { get; set; }
 
         [StringLength(50)]
+        [Display(Name="Tên tác giả")]
+        [Required]
         public string Name { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }
