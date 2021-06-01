@@ -1,15 +1,17 @@
 ﻿using BookShop.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
-    public class AuthorController : Controller
+    public class PublisherController : Controller
     {
-
         private ApplicationDbContext _context;
 
-        public AuthorController()
+        public PublisherController()
         {
             _context = new ApplicationDbContext();
         }
@@ -19,7 +21,6 @@ namespace BookShop.Areas.Admin.Controllers
             _context.Dispose();
         }
 
-        // GET: Admin/Author
         public ActionResult Index()
         {
             var author = _context.Authors.ToList();
@@ -59,7 +60,7 @@ namespace BookShop.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 if (author.Id == 0)
-                    return View("create",author);
+                    return View("create", author);
                 else
                     return View("Edit", author);
             }

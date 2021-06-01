@@ -169,20 +169,26 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105301618192_InitialCreate.cs" />
-    <Compile Include="Migrations\202105301618192_InitialCreate.Designer.cs">
-      <DependentUpon>202105301618192_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202105311415331_Initial.cs" />
+    <Compile Include="Migrations\202105311415331_Initial.Designer.cs">
+      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105301619174_Init.cs" />
-    <Compile Include="Migrations\202105301619174_Init.Designer.cs">
-      <DependentUpon>202105301619174_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202105311423067_AddRequirePublisher.cs" />
+    <Compile Include="Migrations\202105311423067_AddRequirePublisher.Designer.cs">
+      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105311425211_AddRequireCategory.cs" />
+    <Compile Include="Migrations\202105311425211_AddRequireCategory.Designer.cs">
+      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2094,6 +2100,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -2178,9 +2186,11 @@
     <Content Include="Areas\Admin\Data\plugins\toastr\toastr.js.map" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Author\Li.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2229,6 +2239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Publisher\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2244,11 +2255,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105301618192_InitialCreate.resx">
-      <DependentUpon>202105301618192_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105311415331_Initial.resx">
+      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105301619174_Init.resx">
-      <DependentUpon>202105301619174_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105311423067_AddRequirePublisher.resx">
+      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105311425211_AddRequireCategory.resx">
+      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

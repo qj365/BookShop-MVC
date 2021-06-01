@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,9 @@ namespace BookShop.Models
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập tên thể loại.")]
         [StringLength(50)]
+        [Display(Name = "Thể loại")]
         public string Name { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }

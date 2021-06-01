@@ -16,9 +16,9 @@
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage ="Vui lòng nhập tên tác giả.")]
         [StringLength(50)]
         [Display(Name="Tên tác giả")]
-        [Required]
         public string Name { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }

@@ -1,16 +1,20 @@
-﻿@model IEnumerable<BookShop.Models.Author>
+﻿@model IEnumerable<BookShop.Models.Category>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
+
+
+
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Tác giả</h1>
+                <h1>Thể loại</h1>
             </div>
-            
+
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -22,21 +26,24 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="col-sm-2">
-                            <a href="./Author/Create" class="btn btn-primary">
+                            <a href="~/Admin/Category/Create" class="btn btn-primary">
                                 Thêm mới
-                            </a>  
+                            </a>
                         </div>
-                        
+
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
                                     <th>Chức năng</th>
-                                </tr>  
+                                </tr>
                             </thead>
+
 
                             @foreach (var item in Model)
                             {
@@ -46,17 +53,19 @@
                                     </td>
                                     <td>
 
-                                        <a class="btn-edit" href="~/Admin/Author/Edit/@item.Id">
+                                        <a href="~/Admin/Category/Edit/@item.Id">
                                             <i class="far fa-edit icon-edit"></i>
                                         </a>
 
-                                        <a class="js-delete" href="~/Admin/Author/Delete/@item.Id">
+                                        <a class="js-delete" href="~/Admin/Category/Delete/@item.Id">
                                             <i class="far fa-trash-alt icon-delete"></i>
                                         </a>
+
 
                                     </td>
                                 </tr>
                             }
+
                         </table>
                     </div>
                 </div>
@@ -65,25 +74,29 @@
     </div>
 </section>
 
+
+
+
+
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-      $("#example1").on("click", ".js-delete", function (event) {
-          var button = $(this);
+        $("#example1").on("click", ".js-delete", function (event) {
+            var button = $(this);
 
-          event.preventDefault();
+            event.preventDefault();
 
-          bootbox.confirm("Bạn chắc chắn muốn xoá mục này?", function (r) {
-              if (r) {
-                  window.location = button.attr('href');
-              }
-          })
+            bootbox.confirm("Bạn chắc chắn muốn xoá mục này?", function (r) {
+                if (r) {
+                    window.location = button.attr('href');
+                }
+            })
 
 
-      });
-  });
+        });
+    });
 </script>

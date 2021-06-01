@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BookShop
 {
@@ -16,9 +15,9 @@ namespace BookShop
 
             bundles.Add(new ScriptBundle("~/bundles/adminlte").Include(
                        "~/Areas/Admin/Data/plugins/jquery/jquery.min.js",
+                       //"~/Areas/Admin/Data/plugins/jquery-ui/jquery-ui.min.js",
                        "~/Areas/Admin/Data/plugins/bootstrap/js/bootstrap.bundle.min.js",
-                       "~/Areas/Admin/Data/plugins/jquery-ui/jquery-ui.min.js",
-
+                       "~/Scripts/bootbox.js",
 
                        "~/Areas/Admin/Data/plugins/datatables/jquery.dataTables.min.js",
                        "~/Areas/Admin/Data/plugins/datatables/jquery.dataTables.min.js",
@@ -35,6 +34,8 @@ namespace BookShop
                        "~/Areas/Admin/Data/plugins/datatables-buttons/js/buttons.colVis.min.js",
 
                        "~/Areas/Admin/Data/dist/js/adminlte.js"
+
+
                        ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -43,7 +44,8 @@ namespace BookShop
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
