@@ -23,8 +23,8 @@ namespace BookShop.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            var author = _context.Authors.ToList();
-            return View(author);
+            var publisher = _context.Publishers.ToList();
+            return View(publisher);
         }
 
         public ViewResult Create()
@@ -34,46 +34,46 @@ namespace BookShop.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var author = _context.Authors.SingleOrDefault(c => c.Id == id);
-            if (author == null)
+            var publisher = _context.Publishers.SingleOrDefault(c => c.Id == id);
+            if (publisher == null)
                 return HttpNotFound();
-            return View(author);
+            return View(publisher);
         }
 
         public ActionResult Delete(int id)
         {
-            var author = _context.Authors.SingleOrDefault(c => c.Id == id);
-            if (author == null)
+            var publisher = _context.Publishers.SingleOrDefault(c => c.Id == id);
+            if (publisher == null)
                 return HttpNotFound();
             else
             {
-                _context.Authors.Remove(author);
+                _context.Publishers.Remove(publisher);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Author");
+                return RedirectToAction("Index", "publisher");
             }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Author author)
+        public ActionResult Save(Publisher publisher)
         {
             if (!ModelState.IsValid)
             {
-                if (author.Id == 0)
-                    return View("create", author);
+                if (publisher.Id == 0)
+                    return View("create", publisher);
                 else
-                    return View("Edit", author);
+                    return View("Edit", publisher);
             }
-            if (author.Id == 0)
-                _context.Authors.Add(author);
+            if (publisher.Id == 0)
+                _context.Publishers.Add(publisher);
             else
             {
-                var authorInDb = _context.Authors.Single(c => c.Id == author.Id);
-                authorInDb.Name = author.Name;
+                var publisherInDb = _context.Publishers.Single(c => c.Id == publisher.Id);
+                publisherInDb.Name = publisher.Name;
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "Author");
+            return RedirectToAction("Index", "publisher");
         }
     }
 }

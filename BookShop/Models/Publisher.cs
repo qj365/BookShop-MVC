@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,14 +16,17 @@ namespace BookShop.Models
 
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên nhà xuất bản")]
         [StringLength(50)]
+        [Display(Name = "Tên nhà xuất bản")]
         public string Name { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "Địa chỉ")]
         public string Address { get; set; }
 
         [StringLength(50)]
+
         public string Website { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }
