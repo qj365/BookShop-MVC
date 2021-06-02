@@ -11,12 +11,15 @@ namespace BookShop
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate*"
+                        
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/adminlte").Include(
                        "~/Areas/Admin/Data/plugins/jquery/jquery.min.js",
                        //"~/Areas/Admin/Data/plugins/jquery-ui/jquery-ui.min.js",
                        "~/Areas/Admin/Data/plugins/bootstrap/js/bootstrap.bundle.min.js",
+
                        "~/Scripts/bootbox.js",
 
                        "~/Areas/Admin/Data/plugins/datatables/jquery.dataTables.min.js",
@@ -33,8 +36,13 @@ namespace BookShop
                        "~/Areas/Admin/Data/plugins/datatables-buttons/js/buttons.print.min.js",
                        "~/Areas/Admin/Data/plugins/datatables-buttons/js/buttons.colVis.min.js",
 
-                       "~/Areas/Admin/Data/dist/js/adminlte.js"
+                       "~/Areas/Admin/Data/dist/js/adminlte.js",
 
+                       "~/Areas/Admin/Data/plugins/moment/moment.min.js",
+                       "~/Areas/Admin/Data/plugins/moment/locales.min.js",
+                       "~/Areas/Admin/Data/plugins/moment/moment-with-locales.min.js",
+                       "~/Areas/Admin/Data/plugins/inputmask/jquery.inputmask.min.js",
+                       "~/Areas/Admin/Data/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"
 
                        ));
 

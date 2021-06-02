@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
@@ -190,6 +191,26 @@
     <Compile Include="Migrations\202105311425211_AddRequireCategory.cs" />
     <Compile Include="Migrations\202105311425211_AddRequireCategory.Designer.cs">
       <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011433117_AddRequireVoucher.cs" />
+    <Compile Include="Migrations\202106011433117_AddRequireVoucher.Designer.cs">
+      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011519322_ThemTenVoucher.cs" />
+    <Compile Include="Migrations\202106011519322_ThemTenVoucher.Designer.cs">
+      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.cs" />
+    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.Designer.cs">
+      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.cs" />
+    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.Designer.cs">
+      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106021538102_DiscountInt.cs" />
+    <Compile Include="Migrations\202106021538102_DiscountInt.Designer.cs">
+      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2195,6 +2216,9 @@
     <Content Include="Areas\Admin\Views\Publisher\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Publisher\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Voucher\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2243,7 +2267,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Voucher\" />
+    <Folder Include="Areas\Admin\Views\Book\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2267,6 +2291,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105311425211_AddRequireCategory.resx">
       <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011433117_AddRequireVoucher.resx">
+      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011519322_ThemTenVoucher.resx">
+      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106021452176_ChangDiscountToDec.resx">
+      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106021500296_ChangeDiscountPrecision.resx">
+      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106021538102_DiscountInt.resx">
+      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

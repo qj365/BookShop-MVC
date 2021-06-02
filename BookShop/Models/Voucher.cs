@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -14,12 +14,34 @@ namespace BookShop.Models
             Orders = new HashSet<Orders>();
         }
 
+
         public int Id { get; set; }
 
-        public double? Discount { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập mã voucher")]
+        [Display(Name = "Mã voucher")]
+        [StringLength(50)]
+        public string Name { get; set; }
+
+
+        [Required(ErrorMessage = "Vui lòng nhập phần trăm giảm")]
+        [Display(Name = "Phần trăm giảm")]
+        [Range(1,100,ErrorMessage = "Vui lòng nhập giá trị từ 1 - 100")]
+
+
+
+        public int Discount { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập ngày bắt đầu")]
+        [Display(Name = "Ngày bắt đầu")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy hh:mm:ss}",ApplyFormatInEditMode = true)]
+
 
         public DateTime? StartDate { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập ngày kết thúc")]
+        [Display(Name = "Ngày kết thúc")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy hh:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime? EndDate { get; set; }
 
         public virtual ICollection<Orders> Orders { get; set; }

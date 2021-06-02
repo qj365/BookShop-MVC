@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,74 @@ namespace BookShop.Areas.Admin.Controllers
 {
     public class VoucherController : Controller
     {
-        // GET: Admin/Voucher
+        private ApplicationDbContext _context;
+
+        public VoucherController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ActionResult Index()
         {
+            var voucher = _context.Vouchers.ToList();
+            return View(voucher);
+        }
+
+        public ViewResult Create()
+        {
             return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var voucher = _context.Vouchers.SingleOrDefault(c => c.Id == id);
+            if (voucher == null)
+                return HttpNotFound();
+            return View(voucher);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var voucher = _context.Vouchers.SingleOrDefault(c => c.Id == id);
+            if (voucher == null)
+                return HttpNotFound();
+            else
+            {
+                _context.Vouchers.Remove(voucher);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "voucher");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Voucher voucher)
+        {
+            if (!ModelState.IsValid)
+            {
+                if (voucher.Id == 0)
+                    return View("create", voucher);
+                else
+                    return View("Edit", voucher);
+            }
+            if (voucher.Id == 0)
+                _context.Vouchers.Add(voucher);
+            else
+            {
+                var voucherInDb = _context.Vouchers.Single(c => c.Id == voucher.Id);
+                voucherInDb.Name = voucher.Name;
+                voucherInDb.Discount = voucher.Discount;
+                voucherInDb.StartDate = voucher.StartDate;
+                voucherInDb.EndDate = voucher.EndDate;
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", "voucher");
         }
     }
 }

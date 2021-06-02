@@ -49,6 +49,7 @@ namespace BookShop.Models
                .HasForeignKey(e => e.IdBook)
                .WillCascadeOnDelete(false);
 
+
         }
 
         public static ApplicationDbContext Create()
