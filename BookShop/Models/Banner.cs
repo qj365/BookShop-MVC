@@ -17,6 +17,9 @@ namespace BookShop.Models
         [StringLength(10)]
         public string State { get; set; }
 
+        [StringLength(50)]
+        public string RefLink { get; set; }
+
         public int? Stt { get; set; }
     }
 }
