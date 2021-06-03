@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using BookShop.Areas.Admin.ViewModel;
 
 namespace BookShop.Areas.Admin.Controllers
 {
@@ -23,13 +25,26 @@ namespace BookShop.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            var book = _context.Books.ToList();
+            var book = _context.Books
+                .Include(c => c.Author)
+                .Include(c => c.Category)
+                .Include(c => c.Publisher)
+                .ToList();
             return View(book);
         }
 
         public ViewResult Create()
         {
-            return View();
+            var author = _context.Authors.ToList();
+            var category = _context.Categories.ToList();
+            var publisher = _context.Publishers.ToList();
+            var viewModel = new BookViewModel
+            {
+                Authors = author,
+                Categories = category,
+                Publishers = publisher
+            };
+            return View(viewModel);
         }
 
         public ActionResult Edit(int id)

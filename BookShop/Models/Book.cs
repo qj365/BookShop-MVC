@@ -1,10 +1,8 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Book")]
     public partial class Book
@@ -17,27 +15,54 @@ namespace BookShop.Models
         public int Id { get; set; }
 
         [StringLength(50)]
+        [Required]
+        [Display(Name = "Tên sách")]
         public string Name { get; set; }
 
-        public double? Discount { get; set; }
 
+        [Display(Name = "Giảm giá")]
+        public int Discount { get; set; }
+
+
+        [Display(Name = "Giá tiền")]
+        [Required]
+        [Range(0, int.MaxValue,ErrorMessage =("{0} phải lớn hơn {1}"))]
         public int? Price { get; set; }
 
+
+        [Display(Name = "Số lượng")]
+        [Required]
+        [Range(0, int.MaxValue, ErrorMessage = ("{0} phải lớn hơn {1}"))]
         public int? Amount { get; set; }
 
+
         [StringLength(50)]
+        [Display(Name = "Ảnh")]
+        [Required]
         public string Photo { get; set; }
 
+        [Display(Name = "Mô tả")]
         public string Description { get; set; }
 
+
+        [Display(Name = "Nhà xuất bản")]
+        [Required]
         public int? IdPublisher { get; set; }
         [ForeignKey("IdPublisher")]
         public virtual Publisher Publisher { get; set; }
 
+
+
+        [Display(Name = "Thể loại")]
+        [Required]
         public int? IdCategory { get; set; }
         [ForeignKey("IdCategory")]
         public virtual Category Category { get; set; }
 
+
+
+        [Display(Name = "Tác giả")]
+        [Required]
         public int? IdAuthor { get; set; }
         [ForeignKey("IdAuthor")]
 
