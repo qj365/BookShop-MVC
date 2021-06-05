@@ -11,10 +11,8 @@ namespace BookShop.App_Start
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Book, BookViewModel>()
-                .ForMember(d => d.Authors, s => s.MapFrom(c => c.IdAuthor))
-                .ForMember(d => d.Publishers, s => s.MapFrom(c => c.IdPublisher))
-                .ForMember(d => d.Categories, s => s.MapFrom(c => c.IdCategory));
+                cfg.CreateMap<Book, Book>();
+                
             });
             Mapper = config.CreateMapper();
         }

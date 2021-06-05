@@ -38,11 +38,21 @@ namespace BookShop
 
                        "~/Areas/Admin/Data/dist/js/adminlte.js",
 
+                       //Tỉme
                        "~/Areas/Admin/Data/plugins/moment/moment.min.js",
                        "~/Areas/Admin/Data/plugins/moment/locales.min.js",
                        "~/Areas/Admin/Data/plugins/moment/moment-with-locales.min.js",
                        "~/Areas/Admin/Data/plugins/inputmask/jquery.inputmask.min.js",
-                       "~/Areas/Admin/Data/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"
+                       "~/Areas/Admin/Data/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
+
+                       //Editor
+                       "~/Areas/Admin/Data/plugins/summernote/summernote-bs4.min.js",
+
+                       //Input
+                       "~/Areas/Admin/Data/plugins/bs-custom-file-input/bs-custom-file-input.min.js",
+
+                       //Select
+                       "~/Areas/Admin/Data/plugins/select2/js/select2.full.min.js"
 
                        ));
 

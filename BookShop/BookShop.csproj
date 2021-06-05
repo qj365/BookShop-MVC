@@ -225,6 +225,14 @@
     <Compile Include="Migrations\202106021412207_add-reflink.Designer.cs">
       <DependentUpon>202106021412207_add-reflink.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106031019259_AfterMerge.cs" />
+    <Compile Include="Migrations\202106031019259_AfterMerge.Designer.cs">
+      <DependentUpon>202106031019259_AfterMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106051017077_DeletePhoto.cs" />
+    <Compile Include="Migrations\202106051017077_DeletePhoto.Designer.cs">
+      <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -2237,6 +2245,8 @@
     <Content Include="Areas\Admin\Views\Voucher\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Voucher\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Book\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Book\BookForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Book\test.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2334,6 +2344,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106021412207_add-reflink.resx">
       <DependentUpon>202106021412207_add-reflink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106031019259_AfterMerge.resx">
+      <DependentUpon>202106031019259_AfterMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106051017077_DeletePhoto.resx">
+      <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

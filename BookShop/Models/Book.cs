@@ -36,9 +36,9 @@
         public int? Amount { get; set; }
 
 
-        [StringLength(50)]
+        [StringLength(500)]
         [Display(Name = "Ảnh")]
-        [Required]
+
         public string Photo { get; set; }
 
         [Display(Name = "Mô tả")]

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using BookShop.Areas.Admin.ViewModel;
+using System.IO;
 
 namespace BookShop.Areas.Admin.Controllers
 {
@@ -33,6 +34,10 @@ namespace BookShop.Areas.Admin.Controllers
             return View(book);
         }
 
+        public ActionResult test()
+        {
+            return View();
+        }
         public ViewResult Create()
         {
             var author = _context.Authors.ToList();
@@ -44,7 +49,7 @@ namespace BookShop.Areas.Admin.Controllers
                 Categories = category,
                 Publishers = publisher
             };
-            return View(viewModel);
+            return View("BookForm",viewModel);
         }
 
         public ActionResult Edit(int id)
@@ -52,7 +57,16 @@ namespace BookShop.Areas.Admin.Controllers
             var book = _context.Books.SingleOrDefault(c => c.Id == id);
             if (book == null)
                 return HttpNotFound();
-            return View(book);
+            var author = _context.Authors.ToList();
+            var category = _context.Categories.ToList();
+            var publisher = _context.Publishers.ToList();
+            var viewModel = new BookViewModel(book)
+            {
+                Authors = author,
+                Categories = category,
+                Publishers = publisher
+            };
+            return View("BookForm", viewModel);
         }
 
         public ActionResult Delete(int id)
@@ -70,27 +84,47 @@ namespace BookShop.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Book book)
+        public ActionResult Save(Book book, HttpPostedFileBase photo)
         {
-            if (!ModelState.IsValid)
-            {
-                if (book.Id == 0)
-                    return View("create", book);
-                else
-                    return View("Edit", book);
-            }
             if (book.Id == 0)
+            {
+                if (photo != null && photo.ContentLength > 0)
+                { 
+                    var path = Path.Combine(Server.MapPath("~/Areas/Admin/Data/BookImage/"),
+                                            System.IO.Path.GetFileName(photo.FileName));
+                    photo.SaveAs(path);
+
+                    book.Photo = photo.FileName;             
+                }
+                else
+                    book.Photo = "150x200.png";
                 _context.Books.Add(book);
+            }
             else
             {
                 var bookInDb = _context.Books.Single(c => c.Id == book.Id);
                 bookInDb.Name = book.Name;
                 bookInDb.Discount = book.Discount;
+                bookInDb.Price = book.Price;
+                bookInDb.Amount = book.Amount;
+                bookInDb.Description = book.Description;
+                bookInDb.IdAuthor= book.IdAuthor;
+                bookInDb.IdCategory = book.IdCategory;
+                bookInDb.IdPublisher = book.IdPublisher;
+                bookInDb.Price = book.Price;
+                if (photo != null && photo.ContentLength > 0)
+                {
+                    var path = Path.Combine(Server.MapPath("~/Areas/Admin/Data/BookImage/"),
+                                            System.IO.Path.GetFileName(photo.FileName));
+                    photo.SaveAs(path);
+
+                    bookInDb.Photo = photo.FileName;
+                }
                 
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "book");
+            return RedirectToAction("Index", "Book");
         }
     }
 }
