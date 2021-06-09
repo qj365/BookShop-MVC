@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Publisher")]
     public partial class Publisher
@@ -19,6 +20,7 @@
         [Required(ErrorMessage = "Vui lòng nhập tên nhà xuất bản")]
         [StringLength(50)]
         [Display(Name = "Tên nhà xuất bản")]
+        [Remote("IsExist", "Publisher", ErrorMessage = "{0} đã tồn tại")]
         public string Name { get; set; }
 
         [StringLength(100)]

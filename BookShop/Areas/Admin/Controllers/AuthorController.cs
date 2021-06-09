@@ -26,6 +26,11 @@ namespace BookShop.Areas.Admin.Controllers
             return View(author);
         }
 
+        public JsonResult IsExist(string Name)
+        { 
+            return Json(!_context.Authors.Any(x => x.Name == Name), JsonRequestBehavior.AllowGet);
+        }
+
         public ViewResult Create()
         {
             return View();
@@ -56,13 +61,6 @@ namespace BookShop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Author author)
         {
-            if (!ModelState.IsValid)
-            {
-                if (author.Id == 0)
-                    return View("create",author);
-                else
-                    return View("Edit", author);
-            }
             if (author.Id == 0)
                 _context.Authors.Add(author);
             else

@@ -27,6 +27,11 @@ namespace BookShop.Areas.Admin.Controllers
             return View(publisher);
         }
 
+        public JsonResult IsExist(string Name)
+        {
+            return Json(!_context.Publishers.Any(x => x.Name == Name), JsonRequestBehavior.AllowGet);
+        }
+
         public ViewResult Create()
         {
             return View();
@@ -49,7 +54,7 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 _context.Publishers.Remove(publisher);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "publisher");
+                return RedirectToAction("Index", "Publisher");
             }
         }
 
@@ -57,13 +62,6 @@ namespace BookShop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Publisher publisher)
         {
-            if (!ModelState.IsValid)
-            {
-                if (publisher.Id == 0)
-                    return View("create", publisher);
-                else
-                    return View("Edit", publisher);
-            }
             if (publisher.Id == 0)
                 _context.Publishers.Add(publisher);
             else
@@ -73,7 +71,7 @@ namespace BookShop.Areas.Admin.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "publisher");
+            return RedirectToAction("Index", "Publisher");
         }
     }
 }

@@ -27,6 +27,11 @@ namespace BookShop.Areas.Admin.Controllers
             return View(voucher);
         }
 
+        public JsonResult IsExist(string Name)
+        {
+            return Json(!_context.Vouchers.Any(x => x.Name == Name), JsonRequestBehavior.AllowGet);
+        }
+
         public ViewResult Create()
         {
             return View();
@@ -57,13 +62,6 @@ namespace BookShop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Voucher voucher)
         {
-            if (!ModelState.IsValid)
-            {
-                if (voucher.Id == 0)
-                    return View("create", voucher);
-                else
-                    return View("Edit", voucher);
-            }
             if (voucher.Id == 0)
                 _context.Vouchers.Add(voucher);
             else
@@ -76,7 +74,7 @@ namespace BookShop.Areas.Admin.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "voucher");
+            return RedirectToAction("Index", "Voucher");
         }
     }
 }

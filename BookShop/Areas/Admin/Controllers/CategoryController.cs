@@ -27,6 +27,11 @@ namespace BookShop.Areas.Admin.Controllers
             return View(category);
         }
 
+        public JsonResult IsExist(string Name)
+        {
+            return Json(!_context.Categories.Any(x => x.Name == Name), JsonRequestBehavior.AllowGet);
+        }
+
         public ViewResult Create()
         {
             return View();
@@ -59,13 +64,6 @@ namespace BookShop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Category category)
         {
-            if (!ModelState.IsValid)
-            {
-                if (category.Id == 0)
-                    return View("create", category);
-                else
-                    return View("Edit", category);
-            }
             if (category.Id == 0)
                 _context.Categories.Add(category);
             else

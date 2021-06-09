@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Author")]
     public partial class Author
@@ -19,6 +20,7 @@
         [Required(ErrorMessage ="Vui lòng nhập tên tác giả.")]
         [StringLength(50)]
         [Display(Name="Tên tác giả")]
+        [Remote("IsExist", "Author", ErrorMessage = "{0} đã tồn tại")]
         public string Name { get; set; }
 
         public virtual ICollection<Book> Book { get; set; }

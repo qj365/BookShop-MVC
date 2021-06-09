@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Voucher")]
     public partial class Voucher
@@ -21,6 +22,7 @@
         [Required(ErrorMessage = "Vui lòng nhập mã voucher")]
         [Display(Name = "Mã voucher")]
         [StringLength(50)]
+        [Remote("IsExist", "Voucher", ErrorMessage = "{0} đã tồn tại")]
         public string Name { get; set; }
 
 
