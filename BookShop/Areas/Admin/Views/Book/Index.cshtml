@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BookShop.Models.Book>
+﻿@model PagedList.IPagedList<BookShop.Models.Book>
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
@@ -18,17 +19,117 @@
     </div><!-- /.container-fluid -->
 </section>
 
+
+
 <section class="content">
     <div class="container-fluid">
+
+        <!-- Tìm kiếm -->
+        <div class="card card-default collapsed-card" id="card-id">
+
+                <div class="card-header">
+                    <h3 class="card-title">Tìm kiếm</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-plus" id="button-collapse"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm("Index", "Book", FormMethod.Get))
+                    {
+                        <div class="row">
+
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label>Tác giả</label>
+                                    @Html.DropDownList("sa", new SelectList(ViewBag.authors, "id", "name"), "", new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label>Chọn nhà xuất bản</label>
+                                    @Html.DropDownList("sp", new SelectList(ViewBag.publishers, "id", "name"), "", new { @class = "form-control" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label>Chọn thể loại</label>
+                                    @Html.DropDownList("sc", new SelectList(ViewBag.categories, "id", "name"), "", new { @class = "form-control" })
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label>Chọn khoảng giá</label>
+                                    <input type="number" name="mip" id="mip" value="" class="form-control" />
+                                    <span style=" width: 7px; height: 2px; font-size: 0px; display: inline-block; background: rgb(154, 154, 154); margin: 0px 4px; vertical-align: middle; position: absolute; right: -8px; top: 60%;">
+                                        -
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label style="visibility:hidden">Chọn khoảng giá</label>
+                                    <input type="number" name="map" id="map" value="" class="form-control" />
+                                </div>
+                            </div>
+                            
+                            <div class="col-1">
+                                <div class="form-group">
+                                    <label>Sắp xếp giá</label>
+                                    <select class="orderby form-control" id="orderby" name="orderby">
+                                        <option value=""></option>
+                                        <option value="asc">ASC</option>
+                                        <option value="desc">DESC</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding: 0px 7.5px;">
+                            <div class="input-group input-group-lg">
+                                <input type="search" class="form-control form-control-lg" placeholder="Nhập tên sách muốn tìm" name="sb" id="sb">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-lg btn-default">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            
+        </div>
+
+        <!-- Table -->
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="col-sm-2">
-                            <a href="./Book/Create" class="btn btn-primary">
-                                Thêm mới
-                            </a>
+                        <div class="row">
+
                         </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <a href="./Book/Create" class="btn btn-primary">
+                                    Thêm mới
+                                </a>
+                            </div>
+                        </div>
+
 
                     </div>
                     <!-- /.card-header -->
@@ -37,27 +138,27 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Name)
+                                        @Html.DisplayNameFor(model => model.First().Name)
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Photo)
+                                        @Html.DisplayNameFor(model => model.First().Photo)
                                     </th>
                                     <th>
 
-                                        @Html.DisplayNameFor(model => model.Price)
+                                        @Html.DisplayNameFor(model => model.First().Price)
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Amount)
+                                        @Html.DisplayNameFor(model => model.First().Amount)
                                     </th>
 
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Author.Name)
+                                        @Html.DisplayNameFor(model => model.First().Author.Name)
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Category.Name)
+                                        @Html.DisplayNameFor(model => model.First().Category.Name)
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Publisher.Name)
+                                        @Html.DisplayNameFor(model => model.First().Publisher.Name)
                                     </th>
 
                                     <th>Chức năng</th>
@@ -67,9 +168,9 @@
 
                             @foreach (var item in Model)
                             {
-                                
-                                var styletd = item.Discount > 0 ? "text-decoration: line-through;" : "";                                    
-                                
+
+                                var styletd = item.Discount > 0 ? "text-decoration: line-through;" : "";
+
 
                                 <tr>
                                     <td>
@@ -80,7 +181,7 @@
                                     </td>
                                     <td>
                                         <span style="@styletd">@Html.DisplayFor(modelItem => item.Price)</span>
-                                        
+
                                         @if (item.Discount > 0)
                                         {
                                             int? newPrice = item.Price * (100 - item.Discount) / 100;
@@ -115,18 +216,32 @@
 
                         </table>
                     </div>
+
+                    <div class="row">
+                        <div class="col" style="text-align: right; margin-right:19px">
+                                @Html.PagedListPager(Model, pageNum => Url.Action("Index", "Book",new { pageNum }))
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+        
+
     </div>
 </section>
 
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $(function () {
+        $('#sc').select2();
+        $('#sp').select2();
+        $('#sa').select2();
+        $('.orderby').select2();
+
+        @*$("#example1").DataTable({
+          "responsive": true, "lengthChange": true, "autoWidth": false, 
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');*@
 
       $("#example1").on("click", ".js-delete", function (event) {
           var button = $(this);
@@ -138,8 +253,20 @@
                   window.location = button.attr('href');
               }
           })
-
-
       });
+
+        if (document.location.search.length) {
+            $('#card-id').removeClass('collapsed-card');
+            $('#button-collapse').removeClass('fa-plus');
+            $('#button-collapse').addClass('fa-minus');
+
+            var urlParams = new URLSearchParams(document.location.search);
+
+            $('#sb').val(urlParams.get('sb'));
+            $('#mip').val(urlParams.get('mip'));
+            $('#map').val(urlParams.get('map'));
+            $('#orderby').val(urlParams.get('orderby'));
+            $('#orderby').trigger('change');
+        } 
   });
 </script>

@@ -45,6 +45,7 @@ namespace BookShop.Areas.Admin.ViewModel
 
 
         [Display(Name = "Giảm giá")]
+        [Range(0, 100, ErrorMessage = ("{0} phải lớn hơn {1} và nhỏ hơn {2}"))]
         public int Discount { get; set; }
 
 
