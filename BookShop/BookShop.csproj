@@ -185,41 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105311415331_Initial.cs" />
-    <Compile Include="Migrations\202105311415331_Initial.Designer.cs">
-      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105311423067_AddRequirePublisher.cs" />
-    <Compile Include="Migrations\202105311423067_AddRequirePublisher.Designer.cs">
-      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105311425211_AddRequireCategory.cs" />
-    <Compile Include="Migrations\202105311425211_AddRequireCategory.Designer.cs">
-      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011433117_AddRequireVoucher.cs" />
-    <Compile Include="Migrations\202106011433117_AddRequireVoucher.Designer.cs">
-      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011519322_ThemTenVoucher.cs" />
-    <Compile Include="Migrations\202106011519322_ThemTenVoucher.Designer.cs">
-      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.cs" />
-    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.Designer.cs">
-      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.cs" />
-    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.Designer.cs">
-      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021538102_DiscountInt.cs" />
-    <Compile Include="Migrations\202106021538102_DiscountInt.Designer.cs">
-      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106030254089_AddRequireBook.cs" />
-    <Compile Include="Migrations\202106030254089_AddRequireBook.Designer.cs">
-      <DependentUpon>202106030254089_AddRequireBook.cs</DependentUpon>
+    <Compile Include="Migrations\202106121634061_Init.cs" />
+    <Compile Include="Migrations\202106121634061_Init.Designer.cs">
+      <DependentUpon>202106121634061_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -229,6 +197,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DetailOrder.cs" />
+    <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Information.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -240,6 +209,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\base.minb5b3.css" />
     <Content Include="Areas\Admin\Data\dist\css\adminlte.css" />
     <Content Include="Areas\Admin\Data\dist\css\adminlte.min.css" />
     <Content Include="Areas\Admin\Data\dist\css\alt\adminlte.components.css" />
@@ -2127,6 +2098,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mainb5b3.css" />
+    <Content Include="Content\slick.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2235,11 +2208,14 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-cookie.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\mainb5b3.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\slick.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2274,10 +2250,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\RenderBanner.cshtml" />
+    <Content Include="Views\Home\RenderCategory.cshtml" />
+    <Content Include="Views\Home\RenderBestSeller.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
+    <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2293,32 +2273,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105311415331_Initial.resx">
-      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105311423067_AddRequirePublisher.resx">
-      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105311425211_AddRequireCategory.resx">
-      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011433117_AddRequireVoucher.resx">
-      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011519322_ThemTenVoucher.resx">
-      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021452176_ChangDiscountToDec.resx">
-      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021500296_ChangeDiscountPrecision.resx">
-      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021538102_DiscountInt.resx">
-      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106030254089_AddRequireBook.resx">
-      <DependentUpon>202106030254089_AddRequireBook.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106121634061_Init.resx">
+      <DependentUpon>202106121634061_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace BookShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddRequirePublisher : IMigrationMetadata
+    public sealed partial class Init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddRequirePublisher));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Init));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105311423067_AddRequirePublisher"; }
+            get { return "202106121634061_Init"; }
         }
         
         string IMigrationMetadata.Source
