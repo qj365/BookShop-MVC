@@ -59,7 +59,7 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 if (Banner.State == "Dynamic")
                 {
-                    SapXepDynamic(Banner,2);
+                    SapXepDynamic(Banner,1);
                 }
                 _context.Banners.Remove(Banner);
                 _context.SaveChanges();

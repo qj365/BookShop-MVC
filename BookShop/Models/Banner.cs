@@ -24,7 +24,6 @@
         public string RefLink { get; set; }
 
         [Display(Name = "Số thứ tự")]
-        //[Range(1, int.MaxValue, ErrorMessage = "{0} phải có giá trị lớn hơn 0. (Đặt đầu tiên STT 1)")]
         public int? Stt { get; set; }
     }
 }
