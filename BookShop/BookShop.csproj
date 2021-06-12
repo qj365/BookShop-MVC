@@ -185,45 +185,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105311415331_Initial.cs" />
-    <Compile Include="Migrations\202105311415331_Initial.Designer.cs">
-      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105311423067_AddRequirePublisher.cs" />
-    <Compile Include="Migrations\202105311423067_AddRequirePublisher.Designer.cs">
-      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105311425211_AddRequireCategory.cs" />
-    <Compile Include="Migrations\202105311425211_AddRequireCategory.Designer.cs">
-      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011433117_AddRequireVoucher.cs" />
-    <Compile Include="Migrations\202106011433117_AddRequireVoucher.Designer.cs">
-      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011519322_ThemTenVoucher.cs" />
-    <Compile Include="Migrations\202106011519322_ThemTenVoucher.Designer.cs">
-      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.cs" />
-    <Compile Include="Migrations\202106021452176_ChangDiscountToDec.Designer.cs">
-      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.cs" />
-    <Compile Include="Migrations\202106021500296_ChangeDiscountPrecision.Designer.cs">
-      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021538102_DiscountInt.cs" />
-    <Compile Include="Migrations\202106021538102_DiscountInt.Designer.cs">
-      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106030254089_AddRequireBook.cs" />
-    <Compile Include="Migrations\202106030254089_AddRequireBook.Designer.cs">
-      <DependentUpon>202106030254089_AddRequireBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106021412207_add-reflink.cs" />
-    <Compile Include="Migrations\202106021412207_add-reflink.Designer.cs">
-      <DependentUpon>202106021412207_add-reflink.cs</DependentUpon>
+    <Compile Include="Migrations\202106121634061_Init.cs" />
+    <Compile Include="Migrations\202106121634061_Init.Designer.cs">
+      <DependentUpon>202106121634061_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2309,35 +2273,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105311415331_Initial.resx">
-      <DependentUpon>202105311415331_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105311423067_AddRequirePublisher.resx">
-      <DependentUpon>202105311423067_AddRequirePublisher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105311425211_AddRequireCategory.resx">
-      <DependentUpon>202105311425211_AddRequireCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011433117_AddRequireVoucher.resx">
-      <DependentUpon>202106011433117_AddRequireVoucher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011519322_ThemTenVoucher.resx">
-      <DependentUpon>202106011519322_ThemTenVoucher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021452176_ChangDiscountToDec.resx">
-      <DependentUpon>202106021452176_ChangDiscountToDec.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021500296_ChangeDiscountPrecision.resx">
-      <DependentUpon>202106021500296_ChangeDiscountPrecision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021538102_DiscountInt.resx">
-      <DependentUpon>202106021538102_DiscountInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106030254089_AddRequireBook.resx">
-      <DependentUpon>202106030254089_AddRequireBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106021412207_add-reflink.resx">
-      <DependentUpon>202106021412207_add-reflink.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106121634061_Init.resx">
+      <DependentUpon>202106121634061_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
