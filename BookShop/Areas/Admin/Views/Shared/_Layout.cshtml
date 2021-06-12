@@ -45,6 +45,50 @@
             margin-right: 10px;
         }
 
+        .js-delete {
+            position: absolute;
+            color: #fff;
+            padding: 5px 10px;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 3px;
+            z-index: 1;
+            top: 15px;
+            right: 15px;
+            display: none;
+        }
+
+        .js-delete:hover {
+            display: block;
+            color: #17a2b8;
+        }
+
+        .img-gallery:hover + .js-delete {
+            display: block;
+        }
+
+        .item-index {
+            position: absolute;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 3px;
+            z-index: 1;
+            top: 15px;
+            left: 15px;
+        }
+
+        .item-desc {
+            position: absolute;
+            color: #fff;
+            
+            padding: 5px 10px;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 3px;
+            z-index: 1;
+            bottom: 15px;
+            left: 15px;
+        }
 
         .pagination {
             display: inline-block;

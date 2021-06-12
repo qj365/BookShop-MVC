@@ -66,10 +66,6 @@ namespace BookShop.Areas.Admin.Controllers
             return View(book.ToPagedList(pageNum ?? 1, 5));
         }
 
-        public ActionResult test()
-        {
-            return View();
-        }
         public ActionResult Create()
         {
             var author = _context.Authors.ToList();

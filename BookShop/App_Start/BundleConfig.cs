@@ -52,7 +52,10 @@ namespace BookShop
                        "~/Areas/Admin/Data/plugins/bs-custom-file-input/bs-custom-file-input.min.js",
 
                        //Select
-                       "~/Areas/Admin/Data/plugins/select2/js/select2.full.min.js"
+                       "~/Areas/Admin/Data/plugins/select2/js/select2.full.min.js",
+
+                       //Gallery
+                       "~/Areas/Admin/Data//plugins/filterizr/jquery.filterizr.min.js"
 
                        ));
 

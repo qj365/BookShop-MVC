@@ -179,6 +179,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\BookController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
@@ -238,6 +239,10 @@
     <Compile Include="Migrations\202106051017077_DeletePhoto.cs" />
     <Compile Include="Migrations\202106051017077_DeletePhoto.Designer.cs">
       <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106101657134_ThemBanner.cs" />
+    <Compile Include="Migrations\202106101657134_ThemBanner.Designer.cs">
+      <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2254,6 +2259,9 @@
     <Content Include="Areas\Admin\Views\Book\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Book\BookForm.cshtml" />
     <Content Include="Areas\Admin\Views\Book\test.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2305,6 +2313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
@@ -2357,6 +2366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106051017077_DeletePhoto.resx">
       <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106101657134_ThemBanner.resx">
+      <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
