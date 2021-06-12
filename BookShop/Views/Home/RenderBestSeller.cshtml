@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BookShop.Models.Book>
+
+@foreach (var item in Model)
+{
+    <div class="_3cyAdE">
+        <a class="tickid-item-card--link tickid-item-card-padding js-card-slider-link"
+           title="Kem Dưỡng Vùng Mắt Sum37 Secret Programming Eye Cream "
+           href="/Book/@item.Id">
+            <div class="tickid-item-card tickid-item-card--full">
+                <div class="tickid-item-card__cover-img">
+                    <div class="_3ZDC1p">
+                        <div class="tickid-item-card__cover-img-background _3XaILN"
+                             style="background-image: url(@item.Photo); background-size: contain; background-repeat: no-repeat;">
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="tickid-item-card__text-name">
+                        @item.Name
+                    </div>
+                    <div class="tickid-item-card__section-price">
+                        <div class="tickid-item-card__original-price">
+                            @item.Price
+                        </div>
+                        <div class="tickid-item-card__price-gap"></div>
+                        <div class="tickid-item-card__current-price tickid-item-card__current-price--free-shipping">
+                            @(item.Price*(1-item.Discount/100));
+                        </div>
+                        <div class="tickid-item-card__spacer"></div>
+                    </div>
+                    <div class="tickid-item-card__extra-badge-wrapper"></div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+}
