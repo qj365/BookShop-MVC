@@ -66,7 +66,7 @@
 
 
                                     </a>
-                                    <a class="js-delete" href="~/Admin/Banner/Delete/@item.Id">
+                                    <a class="js-delete-banner" href="~/Admin/Banner/Delete/@item.Id">
                                         <i class="far fa-trash-alt icon-delete"></i>
                                     </a>
 
@@ -104,7 +104,7 @@
         });
 
 
-        $(".filter-container").on("click", ".js-delete", function (event) {
+        $(".filter-container").on("click", ".js-delete-banner", function (event) {
             var button = $(this);
 
             event.preventDefault();

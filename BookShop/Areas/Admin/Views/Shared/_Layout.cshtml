@@ -232,7 +232,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="~/Admin/Dashboard" class="nav-link">
+                            <a href="~/Admin/Dashboard" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Dashboard" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Tổng quan
@@ -240,7 +240,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Author" class="nav-link">
+                            <a href="~/Admin/Author" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Author" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Tác giả
@@ -248,7 +248,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Category" class="nav-link">
+                            <a href="~/Admin/Category" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Category" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Thể loại
@@ -256,7 +256,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Publisher" class="nav-link">
+                            <a href="~/Admin/Publisher" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Publisher" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Nhà xuất bản
@@ -264,7 +264,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Voucher" class="nav-link">
+                            <a href="~/Admin/Voucher" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Voucher" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Voucher
@@ -272,7 +272,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Book" class="nav-link">
+                            <a href="~/Admin/Book" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Book" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Sách
@@ -280,7 +280,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Banner" class="nav-link">
+                            <a href="~/Admin/Banner" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Banner" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Banner
@@ -288,7 +288,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Banner" class="nav-link">
+                            <a href="~/Admin/Banner" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Customer" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Khách hàng
@@ -296,7 +296,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Banner" class="nav-link">
+                            <a href="~/Admin/Banner" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Orders" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Đơn hàng
@@ -304,7 +304,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Banner" class="nav-link">
+                            <a href="~/Admin/Banner" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Setting" ? "active" : "")">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Cài đặt

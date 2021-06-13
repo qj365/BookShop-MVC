@@ -2,7 +2,7 @@
     margin-right: 10px;
 }
 
-.js-delete {
+.js-delete-banner {
     position: absolute;
     color: #fff;
     padding: 5px 10px;
@@ -14,12 +14,12 @@
     display: none;
 }
 
-    .js-delete:hover {
+    .js-delete-banner:hover {
         display: block;
         color: #17a2b8;
     }
 
-.img-gallery:hover + .js-delete {
+.img-gallery:hover + .js-delete-banner {
     display: block;
 }
 
