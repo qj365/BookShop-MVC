@@ -35,7 +35,28 @@ namespace BookShop.Controllers
         [ChildActionOnly]
         public ActionResult RenderBestSeller()
         {
-            var model = _context.Books.OrderBy(book => book.DetailOrder.Count);
+            var model = _context.Books.OrderByDescending(book => book.DetailOrder.Count);
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult RenderNewBook()
+        {
+            var model = _context.Books.OrderByDescending(book => book.Id);
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult RenderCategoriesHightlight()
+        {
+            var model = _context.Categories;
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult RenderCategoryContent(int id)
+        {
+            var model = _context.Books.OrderByDescending(book => book.Id);
             return PartialView(model);
         }
 

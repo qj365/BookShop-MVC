@@ -216,7 +216,6 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DetailOrder.cs" />
-    <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Information.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -2279,6 +2278,9 @@
     <Content Include="Views\Home\RenderBanner.cshtml" />
     <Content Include="Views\Home\RenderCategory.cshtml" />
     <Content Include="Views\Home\RenderBestSeller.cshtml" />
+    <Content Include="Views\Home\RenderNewBook.cshtml" />
+    <Content Include="Views\Home\RenderCategoriesHightlight.cshtml" />
+    <Content Include="Views\Home\RenderCategoryContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
