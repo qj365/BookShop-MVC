@@ -23,7 +23,7 @@ namespace BookShop.Models
 
         public DateTime? ReceiveDate { get; set; }
 
-        public int? TotalAmount { get; set; }
+        public int? TotalPrice { get; set; }
 
         public string Note { get; set; }
 

@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202106101657134_ThemBanner.Designer.cs">
       <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106151053048_totalprice.cs" />
+    <Compile Include="Migrations\202106151053048_totalprice.Designer.cs">
+      <DependentUpon>202106151053048_totalprice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Author.cs" />
@@ -2320,6 +2324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106101657134_ThemBanner.resx">
       <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106151053048_totalprice.resx">
+      <DependentUpon>202106151053048_totalprice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,10 +1,8 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("Customer")]
     public partial class Customer
@@ -24,18 +22,22 @@ namespace BookShop.Models
         public string Password { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Họ tên")]
         public string Name { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "SĐT")]
         public string Sdt { get; set; }
 
         [StringLength(50)]
         public string Email { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Ảnh")]
         public string Photo { get; set; }
 
         [StringLength(4)]
+        [Display(Name = "Giới tính")]
         public string Gender { get; set; }
 
         public virtual ICollection<Information> Infomation { get; set; }
