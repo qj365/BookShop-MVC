@@ -54,7 +54,7 @@ namespace BookShop.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult RenderCategoryContent(int id)
+        public ActionResult RenderCategoryContent()
         {
             var model = _context.Books.OrderByDescending(book => book.Id);
             return PartialView(model);
