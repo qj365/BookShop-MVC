@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,16 +18,20 @@ namespace BookShop.Models
 
         [StringLength(100)]
         public string Address { get; set; }
-
+        [Display(Name = "Ngày đặt")]
         public DateTime? OrderDate { get; set; }
 
         public DateTime? ReceiveDate { get; set; }
-
+        [Display(Name = "Tổng tiền")]
         public int? TotalPrice { get; set; }
 
         public string Note { get; set; }
 
+        [StringLength(255)]
+        public string Reason { get; set; }
+
         [StringLength(4)]
+        [Display(Name = "Thanh toán")]
         public string PaymentMethod { get; set; }
 
         public int? IdVoucher { get; set; }

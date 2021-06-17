@@ -106,7 +106,7 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 _context.Books.Remove(book);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "book");
+                return RedirectToAction("Index", "Book");
             }
         }
 

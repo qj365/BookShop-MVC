@@ -41,7 +41,17 @@
 
     @Scripts.Render("~/bundles/jqueryval")
 
+<style>
 
+    .label-form {
+        margin-left: 5px;
+        font-weight:400 !important;
+    }
+
+    #reason-error, #textOther-error {
+        color: red;
+    }
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -295,8 +305,17 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        @{string classTree = "";
+                          string classActive = "";
+                        }
+                        @if (ViewContext.RouteData.Values["Controller"].ToString() == "Delivery"
+                            || ViewContext.RouteData.Values["Controller"].ToString() == "Order")
+                        {
+                            classTree = "menu-is-opening menu-open";
+                            classActive = "active";
+                        }
+                        <li class="nav-item @classTree">
+                            <a href="#" class="nav-link @classActive">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Đơn hàng
@@ -311,7 +330,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="pages/charts/flot.html" class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Order" ? "active" : "")">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tất cả</p>
                                     </a>

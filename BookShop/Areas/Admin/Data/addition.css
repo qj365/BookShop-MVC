@@ -2,6 +2,8 @@
     margin-right: 10px;
 }
 
+
+
 .js-delete-banner {
     position: absolute;
     color: #fff;
@@ -45,6 +47,8 @@
     bottom: 15px;
     left: 15px;
 }
+
+
 
 .pagination {
     display: inline-block;
