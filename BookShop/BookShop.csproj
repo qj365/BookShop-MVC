@@ -188,6 +188,7 @@
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\Controllers\VoucherController.cs" />
+    <Compile Include="Areas\Admin\Dao\DeliveryDAO.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2241,6 +2242,9 @@
     <Content Include="Areas\Admin\Views\Customer\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Customer\Search.cshtml" />
     <Content Include="Areas\Admin\Views\Delivery\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Delivery\Info.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Info.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2300,7 +2304,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
-    <Folder Include="Areas\Admin\Views\Order\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,7 @@
 ﻿using BookShop.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
@@ -23,10 +21,23 @@ namespace BookShop.Areas.Admin.Controllers
         }
         public ActionResult Index()
         {
-            var order = _context.Orders.Include(c => c.Customer).Include(c =>c.State).ToList();
+            var order = _context.Orders.Include(c => c.Customer).Include(c => c.State).
+                Where(c => c.IdState == 1 || c.IdState == 2 || c.IdState == 4).ToList();
+            
             return View(order);
         }
 
+
+
+        public ActionResult Info(int id)
+        {
+            var order = _context.Orders.Include(c=>c.Customer).
+                Include(c=>c.Information).Include(c => c.Voucher).Include(c => c.DetailOrder).SingleOrDefault(c=>c.Id ==id);
+            if(order == null)
+                return HttpNotFound();
+
+            return View(order);
+        }
 
         public ActionResult Confirm(int id)
         {
@@ -39,7 +50,7 @@ namespace BookShop.Areas.Admin.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
         }
 
         public ActionResult Delivering(int id)
@@ -56,6 +67,7 @@ namespace BookShop.Areas.Admin.Controllers
 
         }
 
+        
         public ActionResult Complete(int id)
         {
             var order = _context.Orders.SingleOrDefault(c => c.Id == id);
@@ -63,6 +75,7 @@ namespace BookShop.Areas.Admin.Controllers
                 return HttpNotFound();
             else
             {
+                order.ReceiveDate = DateTime.Now;
                 order.IdState = 5;
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,6 +83,7 @@ namespace BookShop.Areas.Admin.Controllers
 
         }
 
+        [HttpPost]
         public ActionResult Huy(int id, string reason, string other)
         {
             var order = _context.Orders.SingleOrDefault(c => c.Id == id);
@@ -78,7 +92,7 @@ namespace BookShop.Areas.Admin.Controllers
             else
             {
                 order.IdState = 3;
-                if(!String.IsNullOrEmpty(reason))
+                if (!String.IsNullOrEmpty(reason))
                     order.Reason = reason;
                 else
                     order.Reason = other;
