@@ -60,18 +60,16 @@ namespace BookShop.Controllers
             return PartialView(model);
         }
 
-        public ActionResult About()
+        [ChildActionOnly]
+        public ActionResult _RenderCart()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var cart = Session["CartSession"];
+            var list = new List<CartViewModels>();
+            if (cart != null)
+            {
+                list = (List<CartViewModels>)cart;
+            }
+            return PartialView(list);
         }
     }
 }

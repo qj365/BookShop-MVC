@@ -6,7 +6,7 @@
     {
         if (item.State == "dynamic")
         {
-            <a href="@item.RefLink"
+            <a
                class="hero__banner-carousel-item">
                 <figure class="figure">
                     <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"
@@ -23,7 +23,7 @@
         if (item.State == "static" && item.Equals(Model.Last()))
         {
             <div class="hero__banner-fixed-secondary">
-                <a href="@item.RefLink"
+                <a
                    class="link">
                     <figure class="figure">
                         <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"
@@ -35,7 +35,7 @@
         else if (item.State == "static")
         {
             <div class="hero__banner-fixed-primary">
-                <a href="@item.RefLink"
+                <a
                    class="link">
                     <figure class="figure">
                         <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"

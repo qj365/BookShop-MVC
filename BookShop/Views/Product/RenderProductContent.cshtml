@@ -122,10 +122,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex SbDIui product-briefing__left-sales">
-                    <div class="_22sp0A value">88</div>
-                    <div class="ilat8W unit">đã bán</div>
-                </div>
             </div>
             <div class="block-l product-briefing__left-prices">
                 <div class="flex flex-column">
@@ -355,11 +351,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex SbDIui">
-                        <div class="_22sp0A">88</div>
-                        <div class="ilat8W">đã bán</div>
-                    </div>
-
                 </div>
                 <div style="margin-top: 10px;" class="hidden-l">
                     <div class="flex flex-column">
@@ -435,15 +426,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="flex items-center product-briefing__quantity-row">
-                                    <div class="_2iNrDS">Đơn vị: &nbsp;</div>
-                                    <div class="flex items-center cl-gray">
-                                        <div style="margin-right: 15px;">
-                                            lọ
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="product-briefing__quantity-error product-briefing__quantity-row js-product-briefing-quantity-error">
                                 </div>
                             </div>
@@ -453,9 +435,10 @@
                 <div class="product-briefing__action hidden-sm">
                     <div class="OJJX3D">
                         <div class="_2O0llP">
-                            <button type="button"
+                            <a type="button"
+                               href=@Url.Action("Add", "Cart", new { id = item.Id, amount = 1})
                                     class="btn btn-tinted btn--l YtgjXY _3a6p6c js-product-add-cart"
-                                    aria-disabled="false">
+                                    aria-disabled="false" >
                                 <svg class="tickid-svg-icon _343Jzb icon-add-to-cart"
                                      enable-background="new 0 0 15 15" viewBox="0 0 15 15"
                                      x="0" y="0">
@@ -482,7 +465,7 @@
                                 <span>
                                     thêm vào giỏ hàng
                                 </span>
-                            </button>
+                            </a>
                             <button type="button"
                                     class="btn btn-solid-primary btn--l YtgjXY js-product-buy-now"
                                     aria-disabled="false">
@@ -495,7 +478,7 @@
                     <a rel="noopener noreferrer"
                        class="_13C8_x flex items-center product-briefing__footer-link"
                        href="#">
-                        @*<img src="assets/images/shiled.png" class="_110HpJ" />*@
+                        <img src="assets/images/shiled.png" class="_110HpJ" />
                         <span class="XNBuk1">Gian Hàng Đảm Bảo</span>
                         <span>3 Ngày Hoàn Tiền</span>
                     </a>

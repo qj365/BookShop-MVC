@@ -14,10 +14,18 @@ namespace BookShop
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Cart",
+                url: "gio-hang",
+                defaults: new { controller = "Cart", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Product",
                 url: "{metatitle}-{id}",
-                defaults: new { controller = "Product", action = "ProductDetail", id = UrlParameter.Optional }
+                defaults: new { controller = "Product", action = "ProductDetail" }
             );
+
+            
 
             routes.MapRoute(
                 name: "Default",

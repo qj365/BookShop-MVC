@@ -1,0 +1,380 @@
+﻿
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div role="main" class="page-checkout js-page-checkout">
+    <div class="container">
+        <div class="checkout-address-selection js-checkout-address change">
+            <div class="tickid-border-delivery"></div>
+            <div class="checkout-address-selection__container">
+                <div class="checkout-address-selection__section-header">
+                    <div class="checkout-address-selection__section-header-text">
+                        <svg class="tickid-svg-icon icon-location-marker" height="16"
+                             viewBox="0 0 12 16" width="12">
+                            <path d="M6 3.2c1.506 0 2.727 1.195 2.727 2.667 0 1.473-1.22 2.666-2.727 2.666S3.273 7.34 3.273 5.867C3.273 4.395 4.493 3.2 6 3.2zM0 6c0-3.315 2.686-6 6-6s6 2.685 6 6c0 2.498-1.964 5.742-6 9.933C1.613 11.743 0 8.498 0 6z"
+                                  fill-rule="evenodd"></path>
+                        </svg> Địa chỉ nhận hàng
+                    </div>
+                    <div class="checkout-address-selection__change-btn js-change-address">
+                        Thay
+                        đổi
+                    </div>
+                </div>
+                <div class="checkout-address-selection__list js-list-address" id="list-address">
+                    <div class="checkout-address-selection__item js-address-item active"
+                         data-address="11576">
+                        <div class="stardust-radio-button js-radio stardust-radio-button--checked">
+                            <div class="stardust-radio-button__outer-circle">
+                                <div class="stardust-radio-button__inner-circle"></div>
+                            </div>
+                        </div>
+                        <div class="checkout-address-selection__selected-address-summary">
+
+                            <div class="checkout-address-row">
+                                <div class="checkout-address-row__user-detail">
+                                    <span class="checkout-address-row__user-name">a</span>
+                                    <span class="checkout-address-row__user-phone">0987654321</span>
+                                </div>
+                                <div class="checkout-address-row__address-summary">a</div>
+                                <div class="checkout-address-row__default-label">Mặc định</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-address-selection__buttons">
+                    <button class="tickid-button-solid btn-solid-default js-finish-address">
+                        <span class="cart-page-footer__checkout-text">Trở lại</span>
+                    </button>
+                    <button class="tickid-button-solid btn-solid-default js-modal-open"
+                            target="modal-form-address">
+                        <span class="cart-page-footer__checkout-text">
+                            Thêm địa chỉ
+                            mới
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="checkout-product-ordered-list">
+            <div class="checkout-product-ordered-list__header-block">
+                <div class="checkout-product-ordered-list__headers">
+                    <div class="checkout-product-ordered-list__header checkout-product-ordered-list__header--product">
+                        <div class="checkout-product-ordered-list__title">Sản phẩm</div>
+                    </div>
+                    <div class="checkout-product-ordered-list__header hidden-sm">Đơn giá</div>
+                    <div class="checkout-product-ordered-list__header hidden-sm">Số lượng</div>
+                    <div class="checkout-product-ordered-list__header checkout-product-ordered-list__header--subtotal  hidden-sm">
+                        Tổng số tiền:
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-product-ordered-list__content">
+                <div class="checkout-shop-order-group">
+                    <div class="checkout-shop-order-group__orders">
+                        <div class="checkout-product-ordered-list-item">
+                            <div class="checkout-product-ordered-list-item__items">
+                                <div class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--product">
+                                        <img class="checkout-product-ordered-list-item__product-image"
+                                             src="./Trang giỏ hàng trên websiteMỹ Phẩm Ohui - LG Vina1_files/83-1596776828-myphamohui-lgvina.png"
+                                             width="40" height="40">
+                                        <span class="checkout-product-ordered-list-item__product-info">
+                                            <span class="checkout-product-ordered-list-item__product-name">
+                                                Bộ
+                                                cấp Nước Se Khít Lỗ Chân Lông Sum37 Water-full
+                                                Set 5p
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--unit-price">
+                                        390.000đ
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item_header--amount">
+                                        1
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header  checkout-product-ordered-list-item__header--subtotal">
+                                        390.000đ
+                                    </div>
+                                </div>
+                                <div class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--product">
+                                        <img class="checkout-product-ordered-list-item__product-image"
+                                             src="./Trang giỏ hàng trên websiteMỹ Phẩm Ohui - LG Vina1_files/73-1574399953-myohui.png"
+                                             width="40" height="40">
+                                        <span class="checkout-product-ordered-list-item__product-info">
+                                            <span class="checkout-product-ordered-list-item__product-name">
+                                                Tinh
+                                                chất vàng tái sinh Ohui Thefirst 20ml
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--unit-price">
+                                        1.300.000đ
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item_header--amount">
+                                        2
+                                    </div>
+                                    <div class="checkout-product-ordered-list-item__header  checkout-product-ordered-list-item__header--subtotal">
+                                        2.600.000đ
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_2cQ5F4">
+                        <div class="_2mvm9A cRguo3">
+                            <div class="buyer-remark">
+                                <span>Lời nhắn :</span>
+                                <div class="input-with-status">
+                                    <div class="input-with-status__wrapper">
+                                        <input class="input-with-status__input" type="text"
+                                               placeholder="Lưu ý cho người bán..." value=""
+                                               name="user_note">
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_1pkbuI">
+                        <div class="_1wd2xT">Tổng số tiền: (3 Sản phẩm):</div>
+                        <div class="ZwtlWT">2.990.000đ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gCsU4z checkout-order-discount">
+            <div class="vI1a-t">
+                <div class="_1zFChM">
+                    <div class="_1LkOBK">
+                        <img src="./Trang giỏ hàng trên websiteMỹ Phẩm Ohui - LG Vina1_files/dba1e8d8c38903813801a1737e505168.png"
+                             class="_25iUYW"><span class="_2r-vj2">Voucher</span>
+                    </div>
+                </div>
+                <div class="_1B9l8V checkout-order-voucher">
+                    <div class="flex align-items-center js-checkoutp-voucher">
+                    </div>
+                    <span class="KYuIQC js-modal-open cart-page-footer__row1-text"
+                          target="modal-login">
+                        (<a class="link js-checkout-page-login"
+                            href="https://ohuivina.com/auth/login">Đăng nhập</a> sử dụng mã giảm
+                        giá)
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gCsU4z checkout-order-cashback">
+            <div class="vI1a-t">
+                <div class="_1zFChM">
+                    <div class="_1LkOBK">
+                        <img src="./Trang giỏ hàng trên websiteMỹ Phẩm Ohui - LG Vina1_files/coin.png"
+                             class="_25iUYW"><span class="_2r-vj2">Ví tích điểm</span>
+                    </div>
+                </div>
+                <div class="_1B9l8V checkout-order-cashback">
+                    <div class="flex align-items-start flex-column js-checkoutp-cashback">
+                        <div class="checkout-order-cashback-item">
+                            Ví tích điểm : +2.990 điểm
+                        </div>
+                        <div class="checkout-order-cashback-item">
+                            <a class="link js-checkout-page-login"
+                               href="https://ohuivina.com/auth/login">Đăng ký</a> để nhận điểm
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-checkout__payment-order-wrapper">
+            <div class="checkout-payment-method-view js-checkout-payment">
+                <div class="checkout-payment-method-view__current">
+                    <div class="checkout-payment-method-view__current-title">
+                        Phương thức thanh
+                        toán
+                    </div>
+                    <div class="checkout-payment-setting__payment-methods-tab">
+                        <span>
+                            <button class="product-variation js-product-variation product-variation--selected"
+                                    data-target="payment_method_1" data-type="1">
+                                Thanh toán
+                                COD
+                            </button>
+                        </span>
+                        <span>
+                            <button class="product-variation js-product-variation "
+                                    data-target="payment_method_2" data-type="2">
+                                Thanh toán chuyển
+                                khoản
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="_1p-9Tx checkout-payment-setting__payment-method-options js-payment-method-content active"
+                     id="payment_method_1">
+                    <div class="checkout-payment_title">Thanh toán COD</div>
+                    <div class="_3bBHBJ checkout-payment_content" style="white-space:pre-wrap;">
+                        Khách thanh toán sau khi nhận hàng
+                    </div>
+                </div>
+                <div class="_1p-9Tx checkout-payment-setting__payment-method-options js-payment-method-content "
+                     id="payment_method_2">
+                    <div class="checkout-payment_title">Thanh toán chuyển khoản</div>
+                    <div class="_3bBHBJ checkout-payment_content" style="white-space:pre-wrap;">
+                        Thông tin chuyển khoản
+                    </div>
+                    <div class="_3bBHBJ checkout-payment_data">
+                        <div class=" checkout-payment_data-item">
+                            <div class="checkout-payment_data-name">
+                                Ngân hàng Thương mại Cổ phần
+                                Quân đội MB
+                            </div>
+                            <div class="checkout-payment_data-account_number">
+                                Số tài khoản:
+                                0000102605555
+                            </div>
+                            <div class="checkout-payment_data-account_holder">
+                                Chủ tài khoản: Lê
+                                Thị
+                                Hà
+                            </div>
+                            <div class="checkout-payment_data-branch">Chi nhánh: Hà Nội</div>
+                        </div>
+                        <div class="checkout-payment_data-item">
+                            <div class="checkout-payment_data-name">
+                                Ngân hàng TMCP kỹ thương
+                                Việt
+                                Nam Techcombank
+                            </div>
+                            <div class="checkout-payment_data-account_number">
+                                Số tài khoản:
+                                19021217147016
+                            </div>
+                            <div class="checkout-payment_data-account_holder">
+                                Chủ tài khoản: Lê
+                                Thị
+                                Hà
+                            </div>
+                            <div class="checkout-payment_data-branch">
+                                Chi nhánh: Nam Hà Nội
+                            </div>
+                        </div>
+                        <div class="checkout-payment_data-item">
+                            <div class="checkout-payment_data-name">
+                                Ngân hàng TMCP Á Châu ACB
+                            </div>
+                            <div class="checkout-payment_data-account_number">
+                                Số tài khoản:
+                                236139679
+                            </div>
+                            <div class="checkout-payment_data-account_holder">
+                                Chủ tài khoản: Lê
+                                Thị
+                                Hà
+                            </div>
+                            <div class="checkout-payment_data-branch">Chi nhánh: Hà Nội</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-checkout__payment-order-footer">
+                <div class="flex">
+                    <div class="_2X6jGK label">Tổng số tiền:</div>
+                    <div class="_2X6jGK value">2.990.000đ</div>
+                </div>
+
+                <div class="checkoutp-item-fee js-checkoutp-item-fee">
+                    <div class="flex">
+                        <div class="_2X6jGK label">Phí Ship:</div>
+                        <div class="_2X6jGK value">Chưa tính</div>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="_2X6jGK label">Tổng thanh toán</div>
+                    <div class="_2X6jGK bYNx7P value js-cart-page-footer-total-price">
+                        2.990.000đ
+                    </div>
+                </div>
+
+                <div class="_1nqViI _3Rq9ya">
+                    <a href="https://ohuivina.com/cart"
+                       class="stardust-button stardust-button--large _1rgnQx mr-20">Trở lại</a>
+                    <button class="stardust-button stardust-button--primary stardust-button--large _1rgnQx js-btn-cart-checkout">
+                        Đặt
+                        hàng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-form-address" class="modal-form-address js-modal js-form-address"
+     action="/address/store">
+    <div class="tickid-modal__container">
+        <div class="tickid-modal__content">
+            <div class="tickid-popup-form address-modal">
+                <div class="tickid-popup-form__header">
+                    <div class="tickid-popup-form__title">Thêm địa chỉ mới</div>
+                </div>
+                <div class="tickid-popup-form__main">
+                    <div class="tickid-popup-form__main-container">
+                        <div class="address-modal__form_input form-group js-form-group">
+                            <div class="input-with-status">
+                                <div class="input-with-status__wrapper">
+                                    <input class="input-with-status__input js-name" type="text"
+                                           placeholder="Tên" maxlength="64" value="" name="name">
+                                </div>
+                                <span class="input-with-status__error-msg js-message-error"></span>
+                            </div>
+                        </div>
+                        <div class="address-modal__form_input form-group js-form-group">
+                            <div class="input-with-status">
+                                <div class="input-with-status__wrapper">
+                                    <input class="input-with-status__input js-phone" type="text"
+                                           placeholder="Số điện thoại" value="" name="phone">
+                                </div>
+                                <span class="input-with-status__error-msg js-message-error"></span>
+                            </div>
+                        </div>
+                        <div class="address-modal__form_input form-group js-form-group">
+                            <div class="input-with-status">
+                                <div class="input-with-status__wrapper">
+                                    <input class="input-with-status__input js-address"
+                                           type="text" placeholder="Địa chỉ=" maxlength="128"
+                                           value="" name="address">
+                                </div>
+                                <span class="input-with-status__error-msg js-message-error"></span>
+                            </div>
+                        </div>
+                        <div class="address-modal__checkboxes form-group js-form-group">
+                            <label class="stardust-checkbox js-stardust-checkbox">
+                                <input class="stardust-checkbox__input js-address-default"
+                                       type="checkbox" name="default">
+                                <div class="stardust-checkbox__box"></div>Đặt làm địa chỉ mặc
+                                định
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="tickid-popup-form__footer">
+                    <button class="cancel-btn js-modal-close" target="modal-form-address">
+                        Trở
+                        lại
+                    </button>
+                    <button type="button"
+                            class="btn btn-solid-primary btn--s btn--inline _3FRDZQ js-submit-form-address">
+                        Tiếp
+                        tục
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="tickid-modal__overlay"></div>
+    </div>
+</div>
