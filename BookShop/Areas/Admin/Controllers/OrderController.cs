@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using BookShop.Areas.Admin.Dao;
 
 namespace BookShop.Areas.Admin.Controllers
 {
@@ -95,6 +96,15 @@ namespace BookShop.Areas.Admin.Controllers
                     order.Reason = reason;
                 else
                     order.Reason = other;
+                var dao = new DeliveryDAO();
+                var listDetail = dao.GetDetailOrders(id);
+                foreach (var item in listDetail)
+                {
+                    var book = _context.Books.SingleOrDefault(c=>c.Id==item.IdBook);
+                    if (book == null)
+                        return HttpNotFound();
+                    book.Amount = book.Amount + item.Amount;
+                }
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }

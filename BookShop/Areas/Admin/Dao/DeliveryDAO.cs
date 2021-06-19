@@ -1,4 +1,5 @@
 ﻿using BookShop.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BookShop.Areas.Admin.Dao
@@ -27,6 +28,11 @@ namespace BookShop.Areas.Admin.Dao
         public int? tongTien(int idOrder)
         {
             return _context.DetailOrders.Where(c => c.IdOrder == idOrder).Sum(c => c.Price);
+        }
+
+        public List<DetailOrder> GetDetailOrders(int idOrder)
+        {
+            return _context.DetailOrders.Where(c => c.IdOrder == idOrder).ToList();
         }
     }
 }
