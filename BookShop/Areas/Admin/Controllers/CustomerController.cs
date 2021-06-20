@@ -7,6 +7,7 @@ using PagedList;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;

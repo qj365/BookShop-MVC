@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
         // GET: Admin/Dashboard

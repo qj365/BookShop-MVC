@@ -199,9 +199,9 @@
     <Compile Include="Areas\Admin\Notification\NotificationComponent.cs" />
     <Compile Include="Areas\Admin\Notification\NotificationHub.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2289,8 +2289,8 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -2319,7 +2319,6 @@
     <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
     <Folder Include="Areas\Admin\Data\img\" />
-    <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>

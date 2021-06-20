@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class BannerController : Controller
     {
         private ApplicationDbContext _context;

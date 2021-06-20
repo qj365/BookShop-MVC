@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BookShop.Models;
 
-namespace BookShop.Controllers
+namespace BookShop.Areas.Admin.Controllers
 {
     [Authorize]
     public class ManageController : Controller

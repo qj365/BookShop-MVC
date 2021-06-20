@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private ApplicationDbContext _context;

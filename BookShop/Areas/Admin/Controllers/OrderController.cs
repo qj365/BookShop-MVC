@@ -9,6 +9,7 @@ using BookShop.Areas.Admin.Dao;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private ApplicationDbContext _context;
