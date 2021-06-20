@@ -42,7 +42,13 @@ namespace BookShop
                 url: "gio-hang",
                 defaults: new { controller = "Cart", action = "Index" }
             );
-    
+
+            routes.MapRoute(
+                name: "Category",
+                url: "danh-muc/{metatitle}",
+                defaults: new { controller = "Categories", action = "Content" , id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Product",
                 url: "{metatitle}-{id}",

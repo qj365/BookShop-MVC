@@ -191,6 +191,7 @@
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -2300,6 +2301,8 @@
     <Content Include="Views\Customers\Register.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\RenderSearchResult.cshtml" />
+    <Content Include="Views\Categories\Content.cshtml" />
+    <Content Include="Views\Categories\RenderContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
