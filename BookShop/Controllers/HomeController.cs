@@ -71,5 +71,19 @@ namespace BookShop.Controllers
             }
             return PartialView(list);
         }
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult RenderSearchResult(string s)
+        {
+            var model = from x in _context.Books
+                        where x.Name.Contains(s)
+                        select x;
+            return View(model);
+        }
     }
 }

@@ -2298,6 +2298,8 @@
     <Content Include="Views\Cart\Success.cshtml" />
     <Content Include="Views\Customers\Login.cshtml" />
     <Content Include="Views\Customers\Register.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\RenderSearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

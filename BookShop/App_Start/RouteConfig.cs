@@ -14,6 +14,18 @@ namespace BookShop
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "All",
+                url: "all",
+                defaults: new { controller = "Home", action = "Search" }
+            );
+
+            routes.MapRoute(
+                name: "Search",
+                url: "search",
+                defaults: new { controller = "Home", action = "Search" }
+            );
+
+            routes.MapRoute(
                 name: "Cart",
                 url: "thanh-cong",
                 defaults: new { controller = "Cart", action = "Success" }
