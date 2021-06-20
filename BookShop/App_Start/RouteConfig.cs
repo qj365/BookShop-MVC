@@ -15,17 +15,27 @@ namespace BookShop
 
             routes.MapRoute(
                 name: "Cart",
+                url: "thanh-cong",
+                defaults: new { controller = "Cart", action = "Success" }
+            );
+
+            routes.MapRoute(
+                name: "CartCheckout",
+                url: "gio-hang/thanh-toan",
+                defaults: new { controller = "Cart", action = "Checkout" }
+            );
+
+            routes.MapRoute(
+                name: "Success",
                 url: "gio-hang",
                 defaults: new { controller = "Cart", action = "Index" }
             );
-
+    
             routes.MapRoute(
                 name: "Product",
                 url: "{metatitle}-{id}",
                 defaults: new { controller = "Product", action = "ProductDetail" }
             );
-
-            
 
             routes.MapRoute(
                 name: "Default",

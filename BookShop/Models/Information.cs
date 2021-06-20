@@ -1,4 +1,4 @@
-namespace BookShop.Models
+﻿namespace BookShop.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,12 +16,15 @@ namespace BookShop.Models
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập tên người nhận.")]
         [StringLength(50)]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ nhận.")]
         [StringLength(100)]
         public string Address { get; set; }
 
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại nhận.")]
         [StringLength(10)]
         public string Sdt { get; set; }
 

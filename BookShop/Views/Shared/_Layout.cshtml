@@ -91,15 +91,35 @@
                         <div class="container navbar">
                             <div class="navbar__spacer header__top-navbar__spacer"></div>
                             <ul class="navbar__links">
-                                <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium">
-                                    <a href="auth/login.html" class="link js-register-link">Đăng ký</a>
-                                </li>
-                                <li class="navbar__link navbar__link--separator">
-                                    <div class="navbar__link-separator"></div>
-                                </li>
-                                <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium">
-                                    <a href="auth/login.html" class="link js-login-link">Đăng nhập</a>
-                                </li>
+                                @if (Session["USER_SESSION"] == null)
+                                {
+                                    <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium">
+                                        <a href="/Customers/Register" class="link js-register-link">Đăng ký</a>
+                                    </li>
+                                    <li class="navbar__link navbar__link--separator">
+                                        <div class="navbar__link-separator"></div>
+                                    </li>
+                                    <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium">
+                                        <a href="/Customers/Login" class="link js-login-link">Đăng nhập</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="navbar__link navbar__link--tappable navbar__display navbar__link--hoverable navbar__link--account navbar__link--hovering">
+                                        <div class="tickid-drawer ">
+                                            <div class="navbar__link--account__container">
+                                                <div class="navbar__link-text navbar__link-text--normal-case">@Session["USERNAME"]</div>
+                                            </div>
+                                            <div class="tickid-drawer__contents" style="right: 0px;">
+                                                <div class="navbar-account-drawer__content">
+                                                    <a class="navbar-account-drawer__button" href="/user/profile">Tài khoản của tôi</a>
+                                                    <a class="navbar-account-drawer__button" href="/user/purchase">Đơn mua</a>
+                                                    <a href="/auth/logout" class="navbar-account-drawer__button navbar-account-drawer__button--complement">Đăng xuất</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>

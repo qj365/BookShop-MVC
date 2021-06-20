@@ -191,6 +191,7 @@
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -198,25 +199,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106121634061_Init.cs" />
-    <Compile Include="Migrations\202106121634061_Init.Designer.cs">
-      <DependentUpon>202106121634061_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202106190143352_abc.cs" />
+    <Compile Include="Migrations\202106190143352_abc.Designer.cs">
+      <DependentUpon>202106190143352_abc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106031019259_AfterMerge.cs" />
-    <Compile Include="Migrations\202106031019259_AfterMerge.Designer.cs">
-      <DependentUpon>202106031019259_AfterMerge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106051017077_DeletePhoto.cs" />
-    <Compile Include="Migrations\202106051017077_DeletePhoto.Designer.cs">
-      <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106101657134_ThemBanner.cs" />
-    <Compile Include="Migrations\202106101657134_ThemBanner.Designer.cs">
-      <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151053048_totalprice.cs" />
-    <Compile Include="Migrations\202106151053048_totalprice.Designer.cs">
-      <DependentUpon>202106151053048_totalprice.cs</DependentUpon>
+    <Compile Include="Migrations\202106200033346_def.cs" />
+    <Compile Include="Migrations\202106200033346_def.Designer.cs">
+      <DependentUpon>202106200033346_def.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -225,13 +214,16 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\CartViewModels.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CheckoutViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DetailOrder.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Information.cs" />
+    <Compile Include="Models\LoginViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Publisher.cs" />
+    <Compile Include="Models\RegisterViewModels.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\Voucher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2128,6 +2120,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\login.css" />
     <Content Include="Content\mainb5b3.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\slick.css" />
@@ -2300,6 +2293,11 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Shared\_RenderCart.cshtml" />
     <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\RenderInformation.cshtml" />
+    <Content Include="Views\Cart\RenderProductOrdered.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Customers\Login.cshtml" />
+    <Content Include="Views\Customers\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2323,20 +2321,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106121634061_Init.resx">
-      <DependentUpon>202106121634061_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106190143352_abc.resx">
+      <DependentUpon>202106190143352_abc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106031019259_AfterMerge.resx">
-      <DependentUpon>202106031019259_AfterMerge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106051017077_DeletePhoto.resx">
-      <DependentUpon>202106051017077_DeletePhoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106101657134_ThemBanner.resx">
-      <DependentUpon>202106101657134_ThemBanner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151053048_totalprice.resx">
-      <DependentUpon>202106151053048_totalprice.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106200033346_def.resx">
+      <DependentUpon>202106200033346_def.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

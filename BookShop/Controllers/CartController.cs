@@ -11,7 +11,6 @@ namespace BookShop.Controllers
 {
     public class CartController : Controller
     {
-
         private ApplicationDbContext _context = new ApplicationDbContext();
 
         private const string CartSession = "CartSession";
@@ -97,9 +96,103 @@ namespace BookShop.Controllers
                 });
         }
 
-        public ActionResult Checkout()
+        [HttpGet]
+        public ActionResult Checkout(int id)
         {
-            return View();
+            var model = new CheckoutViewModels();
+            model.CartViewModels = (List<CartViewModels>)Session[CartSession];
+            model.Informations = _context.Informations.Where(x => x.Customer.Id == id);
+            model.Customer = _context.Customers.Where(x => x.Id == id);
+            return View(model);
+        }
+
+        public int InsertOrder(int idInformation)
+        {
+            var order = new Orders();
+            order.IdCustomer = (int?)Session["USER_SESSION"];
+            order.IdInformation = idInformation;
+            order.OrderDate = DateTime.Now;
+            order.PaymentMethod = "COD";
+            order.IdState = 1;
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+
+            return order.Id;
+        }
+
+        public ActionResult Order(int idInformation)
+        {
+            var idOrder = InsertOrder(idInformation);
+            var cart = (List<CartViewModels>)Session[CartSession];
+            foreach (var item in cart)
+            {
+                var orderDetail = new DetailOrder();
+                orderDetail.IdBook = item.Book.Id;
+                orderDetail.IdOrder = idOrder;
+                orderDetail.Amount = item.amount;
+                orderDetail.Price = item.Book.Price * (100-item.Book.Discount) / 100;
+                _context.DetailOrders.Add(orderDetail);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Success", new
+            {
+                orderid = idOrder
+            });
+        }
+        /*
+        public ActionResult RenderInformation(int id)
+        {
+            var model = _context.Informations.Where(x=>x.Customer.Id==id);
+            return PartialView(model);
+        }
+
+        public ActionResult RenderProductOrdered()
+        {
+            var cart = Session[CartSession];
+            var list = new List<CartViewModels>();
+            if (cart != null)
+            {
+                list = (List<CartViewModels>)cart;
+            }
+            return View(list);
+        }
+        */
+        public ActionResult Success(int orderid)
+        {
+            var model = _context.DetailOrders.Where(x=>x.Orders.Id==orderid);
+            Session[CartSession]=null;
+            return View(model);
+        }
+
+        public ActionResult Information(string name, string address, string Sdt)
+        {
+            var information = new Information();
+            information.Name=name;
+            information.Address = address;
+            information.Sdt = Sdt;
+            information.IdCustomer= (int?)Session["USER_SESSION"];
+            Information temp = (from x in _context.Informations
+                       where x.IdCustomer==information.IdCustomer
+                       select x).SingleOrDefault();
+            if (temp==null)
+            {
+                _context.Informations.Add(information);
+            }
+            else
+            {
+                temp.Name = information.Name;
+                temp.Address = information.Address;
+                temp.Sdt = information.Sdt;
+                temp.IdCustomer = information.IdCustomer;
+            }
+            _context.SaveChanges();
+            return Redirect(Request.UrlReferrer.ToString());
+        }
+
+        public ActionResult RenderInformation()
+        {
+            
+            return PartialView();
         }
     }
 }
