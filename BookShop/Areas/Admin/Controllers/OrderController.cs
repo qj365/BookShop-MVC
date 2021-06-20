@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using BookShop.Areas.Admin.Dao;
+using Microsoft.AspNet.Identity;
 
 namespace BookShop.Areas.Admin.Controllers
 {
@@ -97,6 +98,7 @@ namespace BookShop.Areas.Admin.Controllers
                     order.Reason = reason;
                 else
                     order.Reason = other;
+                order.Reason = order.Reason + " | " + User.Identity.GetUserName() + " | " + DateTime.Now;
                 var dao = new DeliveryDAO();
                 var listDetail = dao.GetDetailOrders(id);
                 foreach (var item in listDetail)

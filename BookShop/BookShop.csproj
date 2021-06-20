@@ -2230,7 +2230,6 @@
     <Content Include="Areas\Admin\Data\plugins\summernote\summernote.js.map" />
     <Content Include="Areas\Admin\Data\plugins\summernote\summernote.min.js.map" />
     <Content Include="Areas\Admin\Data\plugins\toastr\toastr.js.map" />
-    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Author\Edit.cshtml" />
@@ -2255,6 +2254,8 @@
     <Content Include="Areas\Admin\Views\Delivery\Info.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Info.cshtml" />
+    <Content Include="Areas\Admin\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Manage\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2319,6 +2320,7 @@
     <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
     <Folder Include="Areas\Admin\Data\img\" />
+    <Folder Include="Areas\Admin\Views\Dashboard\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,6 @@ namespace BookShop.Areas.Admin.Controllers
             var notificationRegisterTime = Session["LastUpdated"] != null ? Convert.ToDateTime(Session["LastUpdated"]) : DateTime.Now;
             NotificationComponent NC = new NotificationComponent();
             var list = NC.GetOrders(notificationRegisterTime);
-            //update session here for get only new added contacts (notification)
             Session["LastUpdate"] = DateTime.Now;
             return new JsonResult { Data = list, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
