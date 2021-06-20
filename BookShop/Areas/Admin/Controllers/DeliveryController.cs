@@ -34,7 +34,7 @@ namespace BookShop.Areas.Admin.Controllers
         {
             var order = _context.Orders.Include(c=>c.Customer).
                 Include(c=>c.Information).Include(c => c.Voucher).Include(c => c.DetailOrder).SingleOrDefault(c=>c.Id ==id);
-            if(order == null)
+            if(order == null || order.IdState == 3 || order.IdState == 5)
                 return HttpNotFound();
 
             return View(order);

@@ -30,7 +30,11 @@
                         <div class="col-12">
                             <h4>
                                 <i class="fas fa-globe"></i> BookStore, Inc.
-                                <small class="float-right">Ngày lập: @Model.OrderDate</small>
+                                <small class="float-right">Ngày đặt: @Model.OrderDate</small><br />
+                                @{ var ngayNhan = Model.IdState == 5 ? Model.ReceiveDate.ToString() : "Chưa nhận"; }
+
+
+                                <small class="float-right">Ngày nhận: @ngayNhan</small>
                             </h4>
                         </div>
                         <!-- /.col -->

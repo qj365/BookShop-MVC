@@ -196,6 +196,8 @@
     <Compile Include="Areas\Admin\Controllers\PublisherController.cs" />
     <Compile Include="Areas\Admin\Controllers\VoucherController.cs" />
     <Compile Include="Areas\Admin\Dao\DeliveryDAO.cs" />
+    <Compile Include="Areas\Admin\Notification\NotificationComponent.cs" />
+    <Compile Include="Areas\Admin\Notification\NotificationHub.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2316,7 +2318,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
-    <Folder Include="Areas\Admin\Notification\" />
+    <Folder Include="Areas\Admin\Data\img\" />
+    <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>

@@ -55,7 +55,11 @@ namespace BookShop
                        "~/Areas/Admin/Data/plugins/select2/js/select2.full.min.js",
 
                        //Gallery
-                       "~/Areas/Admin/Data//plugins/filterizr/jquery.filterizr.min.js"
+                       "~/Areas/Admin/Data//plugins/filterizr/jquery.filterizr.min.js",
+
+                       //SignalR
+                       "~/Scripts/jquery.signalR-2.4.2.min.js"
+                       
 
                        ));
 
