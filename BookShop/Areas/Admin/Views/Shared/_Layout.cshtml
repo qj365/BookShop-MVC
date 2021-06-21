@@ -327,7 +327,7 @@
             '<p class="text-sm">'+
 
             '</p>' +
-            
+
             '</div>' +
             '</div>' +
             '</a>';
@@ -350,16 +350,14 @@
             })
 
 
-
             function updateNotification() {
-                $('#notiContent').empty();
+                
                 $.ajax({
                     type: 'GET',
                     url: '/Dashboard/GetNotificationOrders',
                     success: function (response) {
-                        $('#notiContent').empty();
-                        if (response.length == 0) {
-                            $('#notiContent').append($('<h3>Không có dữ liệu</h3>'));
+                        if (response.length != 0) {
+                            $('#notiContent').empty();
                         }
                         $.each(response, function (index, value) {
                             $('#notiContent').append('<a href="/Admin/Delivery/Info/'+ value.Id +'" class="dropdown-item linkInfo">' +
@@ -374,11 +372,13 @@
                                 '</div>' +
                                 '</div>' +
                                 '</a>' +
-                                '<div class="dropdown-divider"></div>' 
-                            ) 
+                                '<div class="dropdown-divider"></div>'
+                            )
 
                         });
-                        $('#notiContent').append('<a href="#" class="dropdown-item dropdown-footer">Xoá tất cả</a>')
+                        if (response.length != 0) {
+                            $('#notiContent').append('<a href="#" class="dropdown-item dropdown-footer" id="deleteAll">Xoá tất cả</a>')
+                        }
                     },
                     error: function (error) {
                         console.log(error);

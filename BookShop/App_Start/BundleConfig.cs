@@ -59,7 +59,9 @@ namespace BookShop
 
                        //SignalR
                        "~/Scripts/jquery.signalR-2.4.2.min.js"
+
                        
+
 
                        ));
 

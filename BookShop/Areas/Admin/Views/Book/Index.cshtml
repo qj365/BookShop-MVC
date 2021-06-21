@@ -143,11 +143,11 @@
                                     <th>
                                         @Html.DisplayNameFor(model => model.First().Photo)
                                     </th>
-                                    <th>
+                                    <th style="text-align:right">
 
                                         @Html.DisplayNameFor(model => model.First().Price)
                                     </th>
-                                    <th>
+                                    <th style="text-align:center">
                                         @Html.DisplayNameFor(model => model.First().Amount)
                                     </th>
 
@@ -179,7 +179,7 @@
                                     <td>
                                         <img width="100px" src="~/Areas/Admin/Data/BookImage/@item.Photo" />
                                     </td>
-                                    <td>
+                                    <td style="text-align:right">
                                         <span style="@styletd">@Html.DisplayFor(modelItem => item.Price)</span>
 
                                         @if (item.Discount > 0)
@@ -188,7 +188,7 @@
                                             <br /> @newPrice
                                         }
                                     </td>
-                                    <td>
+                                    <td style="text-align:center">
                                         @Html.DisplayFor(modelItem => item.Amount)
                                     </td>
                                     <td>

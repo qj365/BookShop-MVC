@@ -17,6 +17,11 @@ namespace BookShop.Areas.Admin.Controllers
             _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ActionResult Index(int? pageNum, string name = null, string email = null, string sdt = null, string username = null)
         {
             if (name == null && email == null && sdt == null && username == null)

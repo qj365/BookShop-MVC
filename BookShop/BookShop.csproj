@@ -200,6 +200,7 @@
     <Compile Include="Areas\Admin\Notification\NotificationHub.cs" />
     <Compile Include="Areas\Admin\ViewModel\BookViewModel.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\ViewModel\TopList.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -2256,6 +2257,7 @@
     <Content Include="Areas\Admin\Views\Order\Info.cshtml" />
     <Content Include="Areas\Admin\Views\Manage\ChangePassword.cshtml" />
     <Content Include="Areas\Admin\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2320,7 +2322,6 @@
     <Folder Include="Areas\Admin\Data\BannerImage\" />
     <Folder Include="Areas\Admin\Data\BookImage\" />
     <Folder Include="Areas\Admin\Data\img\" />
-    <Folder Include="Areas\Admin\Views\Dashboard\" />
     <Folder Include="img\banner\" />
   </ItemGroup>
   <ItemGroup>
