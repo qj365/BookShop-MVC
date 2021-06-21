@@ -4,9 +4,9 @@
     <!--  -->
     @foreach (var item in Model)
     {
-        if (item.State == "dynamic")
+        if (item.State == "Dynamic")
         {
-            <a href="@item.RefLink"
+            <a
                class="hero__banner-carousel-item">
                 <figure class="figure">
                     <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"
@@ -20,10 +20,10 @@
 <div class="hero__banner-fixed">
     @foreach (var item in Model)
     {
-        if (item.State == "static" && item.Equals(Model.Last()))
+        if (item.State == "Static" && item.Equals(Model.Last()))
         {
             <div class="hero__banner-fixed-secondary">
-                <a href="@item.RefLink"
+                <a
                    class="link">
                     <figure class="figure">
                         <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"
@@ -32,10 +32,10 @@
                 </a>
             </div>
         }
-        else if (item.State == "static")
+        else if (item.State == "Static")
         {
             <div class="hero__banner-fixed-primary">
-                <a href="@item.RefLink"
+                <a
                    class="link">
                     <figure class="figure">
                         <img src="~/Areas/Admin/Data/BannerImage/@item.Photo"
