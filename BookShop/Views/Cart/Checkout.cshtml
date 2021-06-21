@@ -43,11 +43,11 @@
                             <div class="checkout-address-selection__selected-address-summary">
 
                                 <div class="checkout-address-row">
-                                    <div class="checkout-address-row__user-detail">
-                                        <span class="checkout-address-row__user-name">@Model.Informations.First().Name</span>
-                                        <span class="checkout-address-row__user-phone">@Model.Informations.First().Sdt</span>
-                                    </div>
-                                    <div class="checkout-address-row__address-summary">@Model.Informations.First().Address</div>
+                                        <div class="checkout-address-row__user-detail">
+                                            <span class="checkout-address-row__user-name">@Model.Information.Name</span>
+                                            <span class="checkout-address-row__user-phone">@Model.Information.Sdt</span>
+                                        </div>
+                                        <div class="checkout-address-row__address-summary">@Model.Information.Address</div>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                                     <div class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
                                         <div class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--product">
                                             <img class="checkout-product-ordered-list-item__product-image"
-                                                 src="./Trang giỏ hàng trên websiteMỹ Phẩm Ohui - LG Vina1_files/83-1596776828-myphamohui-lgvina.png"
+                                                 src="~/Areas/Admin/Data/BookImage/@item.Book.Photo"
                                                  width="40" height="40">
                                             <span class="checkout-product-ordered-list-item__product-info">
                                                 <span class="checkout-product-ordered-list-item__product-name">
@@ -158,7 +158,7 @@
                 <div class="_1nqViI _3Rq9ya">
                     <a href="https://ohuivina.com/cart"
                        class="stardust-button stardust-button--large _1rgnQx mr-20">Trở lại</a>
-                    <a class="stardust-button stardust-button--primary stardust-button--large _1rgnQx js-btn-cart-checkout" href="/Cart/Order/?idInformation=@Model.Informations.First().Id">
+                    <a class="stardust-button stardust-button--primary stardust-button--large _1rgnQx js-btn-cart-checkout" href="/Cart/Order/?idInformation=@Model.Information.Id">
                         Đặt
                         hàng
                     </a>

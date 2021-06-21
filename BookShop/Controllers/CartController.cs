@@ -101,8 +101,18 @@ namespace BookShop.Controllers
         {
             var model = new CheckoutViewModels();
             model.CartViewModels = (List<CartViewModels>)Session[CartSession];
-            model.Informations = _context.Informations.Where(x => x.Customer.Id == id);
-            model.Customer = _context.Customers.Where(x => x.Id == id);
+            model.Information = _context.Informations.FirstOrDefault(x => x.Customer.Id == id);
+            if (model.Information == null)
+            {
+                Models.Information information = new Information();
+                information.Name = "";
+                information.Address = "";
+                information.Sdt = "";
+                information.IdCustomer = (int?)Session["USER_SESSION"];
+                _context.Informations.Add(information);
+                _context.SaveChanges();
+                model.Information = _context.Informations.FirstOrDefault(x => x.Customer.Id == id);
+            }
             return View(model);
         }
 

@@ -232,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Data\addition.css" />
+    <Content Include="Areas\Admin\Data\BookImage\image_237224.jpg" />
     <Content Include="Content\all.min.css" />
     <Content Include="Content\base.minb5b3.css" />
     <Content Include="Areas\Admin\Data\dist\css\adminlte.css" />
@@ -2307,7 +2308,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\BannerImage\" />
-    <Folder Include="Areas\Admin\Data\BookImage\" />
     <Folder Include="Areas\Admin\Views\Delivery\" />
     <Folder Include="Areas\Admin\Views\Order\" />
     <Folder Include="img\banner\" />

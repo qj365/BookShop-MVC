@@ -10,8 +10,6 @@ namespace BookShop.Models
     {
         public List<CartViewModels> CartViewModels { get; set; }
 
-        public IEnumerable<Information> Informations { get; set; }
-
-        public IEnumerable<Customer> Customer { get; set; }
+        public Information Information { get; set; }
     }
 }

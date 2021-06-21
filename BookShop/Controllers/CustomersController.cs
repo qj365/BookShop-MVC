@@ -87,5 +87,12 @@ namespace BookShop.Controllers
                     return false;
             }
         }
+
+        public ActionResult Logout()
+        {
+            Session["USER_SESSION"]=null;
+            Session["USERNAME"]=null;
+            return Redirect(Request.UrlReferrer.ToString());
+        }
     }
 }
