@@ -7,6 +7,7 @@ using PagedList;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
@@ -14,6 +15,11 @@ namespace BookShop.Areas.Admin.Controllers
         public CustomerController()
         {
             _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
         }
 
         public ActionResult Index(int? pageNum, string name = null, string email = null, string sdt = null, string username = null)

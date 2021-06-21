@@ -4,6 +4,7 @@ using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class AuthorController : Controller
     {
 

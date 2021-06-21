@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace BookShop.Areas.Admin.Controllers
 {
+    [Authorize]
     public class BookController : Controller
     {
         private ApplicationDbContext _context;
@@ -106,7 +107,7 @@ namespace BookShop.Areas.Admin.Controllers
             {
                 _context.Books.Remove(book);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "book");
+                return RedirectToAction("Index", "Book");
             }
         }
 
